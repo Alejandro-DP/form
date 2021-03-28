@@ -12,26 +12,27 @@
     <div class="container col-lg-5">
         <div class="card justify-content-md-center">
             <div class=" card-body"></div>
-                <form class="form-horizontal justify-content-center" id="formulario" method="POST" action="#">
+                <form class="form-horizontal justify-content-center" id="formulario" method="POST" action="">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nom" id="nombre" placeholder="last name / name">
+                        <input type="text" class="form-control" name="name" id="nombre" placeholder="last name / name">
                     </div>
                     <div class="form-group">
                         <label for="Email">Email</label>
-                        <input type="text" class="form-control" name="correo" id="Email" placeholder="ejemplo@ejemplo.com">
+                        <input type="text" class="form-control" name="email" id="Email" placeholder="ejemplo@ejemplo.com">
                     </div>
                     <div class="form-group">
                         <label for="paquete" >Paquete</label>
-                        <select class="form-control" name="pac" id="paquete">
-                            <option value="Paquete A">Paquete A</option>
-                            <option value="Paquete B">Paquete B</option>
-                            <option value="Paquete C">Paquete C</option>
+                        <select class="form-control" name="package" id="paquete">
+                            <option value="">Selecciona un paquete</option>
+                            <option value="a">Paquete A</option>
+                            <option value="b">Paquete B</option>
+                            <option value="c">Paquete C</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="Movie">Movie</label>
-                        <input type="text " name="peli" class="form-control" id="Movie">
+                        <input type="text " name="movie" class="form-control" id="Movie">
                     </div>
                     <div class="form-group">
                         <span>Precio : $1,000 MXN</span>
@@ -48,9 +49,7 @@
             </div>
         </div>
     </div>
-    <?php
-    include("php/validar.php")
-    ?>
+    
     <script src="js/app.js"></script>
 </body>
 </html>
