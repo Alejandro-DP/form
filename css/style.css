@@ -1,0 +1,13 @@
+body{
+    background: linear-gradient(to right, #3a7fd5, #6ebce2);
+
+}
+.card{
+    padding: 10px;
+    margin-top: 50px;
+    opacity: 90%;
+    border-radius: 30%;
+}
+h4{
+    color: black ;
+}
