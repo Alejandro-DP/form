@@ -16,10 +16,12 @@
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" name="name" id="nombre" placeholder="last name / name">
+                        <span class="font-weight-light ml-1 require">Requerido</span>
                     </div>
                     <div class="form-group">
                         <label for="Email">Email</label>
                         <input type="text" class="form-control" name="email" id="Email" placeholder="ejemplo@ejemplo.com">
+                        <span class="font-weight-light ml-1 require">Requerido</span>
                     </div>
                     <div class="form-group">
                         <label for="paquete" >Paquete</label>
@@ -29,10 +31,12 @@
                             <option value="b">Paquete B</option>
                             <option value="c">Paquete C</option>
                         </select>
+                        <span class="font-weight-light ml-1 require">Requerido</span>
                     </div>
                     <div class="form-group">
                         <label for="Movie">Movie</label>
-                        <input type="text " name="movie" class="form-control" id="Movie">
+                        <input type="text " name="movie" class="form-control" id="Movie" placeholder="Nombre de la pelicula">
+                        <span class="font-weight-light ml-1 require">Requerido</span>
                     </div>
                     <div class="form-group">
                         <span>Precio : $1,000 MXN</span>
@@ -43,9 +47,6 @@
                     </div>
                     
                 </form>
-                <div class="erro" id="error">
-
-                </div>
             </div>
         </div>
     </div>
