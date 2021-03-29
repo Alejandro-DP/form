@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
     sendData = false;
   }
   if (e.target.package.value == "") {
-    requireValues[2].innerHTML = "Ingresa un paquete";
+    requireValues[2].innerHTML = "Seleccione un paquete";
     requireValues[2].style.display = "block";
     sendData = false;
   }

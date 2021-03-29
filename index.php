@@ -39,7 +39,9 @@
                         <span class="font-weight-light ml-1 require">Requerido</span>
                     </div>
                     <div class="form-group">
-                        <span>Precio : $1,000 MXN</span>
+                        <span>Precio : $100 MXN</span>
+                        <input type="hidden" name="price" class="form-control"  value="100">
+                        
                     </div>
                     
                     <div class="form-group"> 
