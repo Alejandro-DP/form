@@ -9,8 +9,9 @@ $price = $_POST['price'];
 
 /* Validar campos */
 
-
-if ($name == "") {
+if (empty($name) || empty($email) || empty($package) || empty($movie) || empty($price)) {
+    echo json_encode('Error, datos incompletos');
+    return;
 }
 
 /* Logic of price*/
@@ -42,15 +43,13 @@ $file = '../save.json';
 file_put_contents($file, $json_string);
 
 /* Send Data Email */
-if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['movie']) && !empty($_POST['package'])) {
-    $titulo    = 'Nuevo';
-    $mensaje   = 'Se ha ingresado un nuevo registro al archivo save.json';
-    $cabeceras = 'From: Nuevo Registro' . "\r\n" .
-        'Reply-To: webmaster@example.com' . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-    $para = 'd2c_crew@hotmail.com';
-    $mail = @mail($para, $mensaje, $cabeceras);
-    if ($mail) {
-        echo json_encode($json_data);
-    }
+$tittle    = "Titulo";
+$mesaje   = "Nuevo registro";
+$headers = "From: d2c_crew@hotmail.com" . "\r\n";
+$headers =    "Reply-To: d2c_crew@hotmail.com" . "\r\n";
+$headers = "X-Mailer: PHP/" . phpversion();
+$to = "d2c_crew@hotmail.com";
+$mail = @mail($to, $mesaje, $headers);
+if ($mail) {
+    echo json_encode($json_data);
 }
