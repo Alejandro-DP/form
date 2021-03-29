@@ -27,24 +27,21 @@ switch($package){
         break;
 }
 
-
+// Read Json
 $data_json = file_get_contents('../save.json');
 $json_data = json_decode($data_json, true);
 
-$array_push($json_data, new Data($name,$email,$package,$movie,$_price));
-
-
-
-
-
-
- /* $arr_data = array();
+if(sizeof($json_data) > 0 ){
+   array_push($json_data, new Data($name,$email,$package,$movie,$_price));
+    
+}else{
+    $json_data = array( new Data($name,$email,$package,$movie,$_price));
+}
  
-
-//Creamos el JSON
-$json_string = json_encode($arr_data);
+//Put or create JSON
+$json_string = json_encode($json_data);
 $file = '../save.json';
-file_put_contents($file, $json_string); */
+file_put_contents($file, $json_string); 
 
 
 if ($name != ""){
