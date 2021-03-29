@@ -10,14 +10,13 @@ $price = $_POST['price'];
 /* Validar campos */
 
 
-if ($name == "" ){
-
+if ($name == "") {
 }
 
-/* Realizar logica de  */
-switch($package){
+/* Logic of price*/
+switch ($package) {
     case 'a':
-       $_price = (int)$price + 15; 
+        $_price = (int)$price + 15;
         break;
     case 'b':
         $_price = (int)$price + 30;
@@ -31,40 +30,27 @@ switch($package){
 $data_json = file_get_contents('../save.json');
 $json_data = json_decode($data_json, true);
 
-if(sizeof($json_data) > 0 ){
-   array_push($json_data, new Data($name,$email,$package,$movie,$_price));
-    
-}else{
-    $json_data = array( new Data($name,$email,$package,$movie,$_price));
+if (sizeof($json_data) > 0) {
+    array_push($json_data, new Data($name, $email, $package, $movie, $_price));
+} else {
+    $json_data = array(new Data($name, $email, $package, $movie, $_price));
 }
- 
+
 //Put or create JSON
 $json_string = json_encode($json_data);
 $file = '../save.json';
-file_put_contents($file, $json_string); 
+file_put_contents($file, $json_string);
 
-
-if ($name != ""){
-    /* Respuesta a Js */
-    echo json_encode($json_data);
-};
-
-
-
-
- /* if (isset($_POST['enviar'])){
-     if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['movie']) && !empty($_POST['package'])){
-        $titulo    = 'El título';
-        $mensaje   = 'Hola';
-        $cabeceras = 'From: webmaster@example.com' . "\r\n" .
-            'Reply-To: webmaster@example.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-        $para = $_POST['email'];
-       $mail = @mail($pa,$mensaje,$cabeceras);
-        if($mail){
-            echo "<h4> se ha enviado un mail !</h4>";
-        }
-     } 
+/* Send Data Email */
+if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['movie']) && !empty($_POST['package'])) {
+    $titulo    = 'Nuevo';
+    $mensaje   = 'Se ha ingresado un nuevo registro al archivo save.json';
+    $cabeceras = 'From: Nuevo Registro' . "\r\n" .
+        'Reply-To: webmaster@example.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+    $para = 'd2c_crew@hotmail.com';
+    $mail = @mail($para, $mensaje, $cabeceras);
+    if ($mail) {
+        echo json_encode($json_data);
     }
-    */
- ?>
+}
