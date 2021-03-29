@@ -1,8 +1,8 @@
-var error = document.getElementById("error");
+const error = document.getElementById("error");
 error.style.color = "red";
 
-var form = document.getElementById("formulario");
-form.addEventListener("submit", function (e) {
+const form = document.getElementById("formulario");
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   let message = [];
   if (e.target.name.value == "") {
@@ -22,12 +22,7 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  const data = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    package: e.target.package.value,
-    movie: e.target.movie.value,
-  };
+  const data = new FormData(form);
   sendData(data);
 });
 
@@ -36,4 +31,6 @@ const sendData = async (data) => {
     method: "POST",
     body: data,
   });
+  const response = await send.json();
+  console.log(response);
 };
