@@ -51,6 +51,6 @@ $headers = "X-Mailer: PHP/" . phpversion();
 $to =  "alexdelacruz1888@gmail.com";
 $mail = mail($to,$tittle,$mesaje, $headers);
 if ($mail) {
-    echo json_encode($mail);
+    echo json_encode($json_data);
    
 }
