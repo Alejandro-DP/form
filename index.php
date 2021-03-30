@@ -49,6 +49,9 @@
                     </div>
                     
                 </form>
+                <?php
+                 include("php/validar.php");
+                ?>
             </div>
         </div>
     </div>
