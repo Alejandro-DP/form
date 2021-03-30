@@ -45,11 +45,12 @@ file_put_contents($file, $json_string);
 /* Send Data Email */
 $tittle    = "Titulo";
 $mesaje   = "Nuevo registro";
-$headers = "From: d2c_crew@hotmail.com" . "\r\n";
-$headers =    "Reply-To: d2c_crew@hotmail.com" . "\r\n";
+$headers = "From: alexdelacruz1888@gmail.com" . "\r\n";
+$headers =    "Reply-To: alexdelacruz1888@gamil.com" . "\r\n";
 $headers = "X-Mailer: PHP/" . phpversion();
-$to = "d2c_crew@hotmail.com";
-$mail = @mail($to, $mesaje, $headers);
+$to =  "alexdelacruz1888@gmail.com";
+$mail = mail($to,$tittle,$mesaje, $headers);
 if ($mail) {
-    echo json_encode($json_data);
+    echo json_encode($mail);
+   
 }
